@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="35sp"
+        android:text="Time in seconds"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/mButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mButton"
+        android:text="check SP"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/mButtonRoom"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="@+id/mButton"
+        app:layout_constraintRight_toRightOf="@+id/mButton"
+        app:layout_constraintTop_toBottomOf="@+id/mButton" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mButtonRoom"
+        android:text="check room"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/mButton"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewRoom"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="@+id/mButtonRoom"
+        app:layout_constraintRight_toRightOf="@+id/mButtonRoom"
+        app:layout_constraintTop_toBottomOf="@+id/mButtonRoom" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mButtonClearTV"
+        android:text="clear all textView"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRoom"
+        app:layout_constraintBottom_toTopOf="@+id/textViewDeleteSp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mButtonClear"
+        android:text="clear Both database and get time"
+        android:textAllCaps="false"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewDeleteSp"
+        android:textSize="15sp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintLeft_toLeftOf="@+id/mButton"
+        app:layout_constraintRight_toRightOf="@+id/mButton"
+        app:layout_constraintBottom_toTopOf="@+id/mButtonClear" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewDeleteRoom"
+        android:textSize="15sp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintLeft_toLeftOf="@+id/mButtonRoom"
+        app:layout_constraintRight_toRightOf="@+id/mButtonRoom"
+        app:layout_constraintBottom_toTopOf="@+id/mButtonClear"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
