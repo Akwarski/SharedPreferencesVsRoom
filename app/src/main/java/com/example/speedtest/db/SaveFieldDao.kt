@@ -13,4 +13,7 @@ interface SaveFieldDao {
 
     @Query("DELETE FROM SaveFieldData")
     fun deleteAll()
+
+    @Query("SELECT * FROM SaveFieldData")
+    fun getAll() : List<SaveFieldData>
 }

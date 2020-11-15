@@ -11,4 +11,8 @@ class Repository(private val saveFieldDao: SaveFieldDao) {
     fun delete(){
         saveFieldDao.deleteAll()
     }
+
+    fun getAll() : List<SaveFieldData>{
+        return saveFieldDao.getAll()
+    }
 }

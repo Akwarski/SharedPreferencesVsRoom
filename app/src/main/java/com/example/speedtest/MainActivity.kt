@@ -25,13 +25,17 @@ class MainActivity : AppCompatActivity() {
         val mButtonRoom: Button = findViewById(R.id.mButtonRoom)
         val mButtonClear: Button = findViewById(R.id.mButtonClear)
         val mButtonClearTV: Button = findViewById(R.id.mButtonClearTV)
+        val mGetButton: Button = findViewById(R.id.mGetButton)
+        val mGetButtonRoom: Button = findViewById(R.id.mGetButtonRoom)
         val mTextSp: TextView = findViewById(R.id.textView)
         val mTextRoom: TextView = findViewById(R.id.textViewRoom)
         val mTextDeleteSp: TextView = findViewById(R.id.textViewDeleteSp)
         val mTextDeleteRoom: TextView = findViewById(R.id.textViewDeleteRoom)
+        val textViewGetSp: TextView = findViewById(R.id.textViewGetSp)
+        val textViewGetRoom: TextView = findViewById(R.id.textViewGetRoom)
         val sharedPreference = this.getSharedPreferences(
-            "speedTestSharedPreferences",
-            Context.MODE_PRIVATE
+                "speedTestSharedPreferences",
+                Context.MODE_PRIVATE
         )
 
 
@@ -58,6 +62,22 @@ class MainActivity : AppCompatActivity() {
             mTextRoom.text = (time / 1000000000.0).toString()
         }
 
+        mGetButton.setOnClickListener {
+            val time = measureNanoTime {
+                sharedPreference.all
+            }
+
+            textViewGetSp.text = (time / 1000000000.0).toString()
+        }
+
+        mGetButtonRoom.setOnClickListener {
+            val time = measureNanoTime {
+                viewModel.getAll()
+            }
+
+            textViewGetRoom.text = (time / 1000000000.0).toString()
+        }
+
         mButtonClear.setOnClickListener {
             val timeDeleteSp = measureNanoTime {
                 viewModel.delete()
@@ -72,6 +92,8 @@ class MainActivity : AppCompatActivity() {
         mButtonClearTV.setOnClickListener {
             mTextSp.text = ""
             mTextRoom.text = ""
+            textViewGetSp.text = ""
+            textViewGetRoom.text = ""
             mTextDeleteSp.text = ""
             mTextDeleteRoom.text = ""
         }

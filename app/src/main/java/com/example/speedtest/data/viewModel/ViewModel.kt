@@ -4,8 +4,8 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.speedtest.data.model.SaveFieldData
-import com.example.speedtest.db.AppDatabase
 import com.example.speedtest.data.repository.Repository
+import com.example.speedtest.db.AppDatabase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -23,5 +23,9 @@ class ViewModel(application: Application): AndroidViewModel(application)  {
 
     fun delete() = viewModelScope.launch(Dispatchers.IO){
         repository.delete()
+    }
+
+    fun getAll() = viewModelScope.launch(Dispatchers.IO){
+        repository.getAll()
     }
 }

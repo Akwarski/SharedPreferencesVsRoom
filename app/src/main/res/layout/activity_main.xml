@@ -59,10 +59,50 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/mGetButton"
+        android:text="get all SP"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/mButtonClearTV"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/mButtonRoom"
+        app:layout_constraintTop_toBottomOf="@+id/mButton" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewGetSp"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="@+id/mGetButton"
+        app:layout_constraintRight_toRightOf="@+id/mGetButton"
+        app:layout_constraintTop_toBottomOf="@+id/mGetButton" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mGetButtonRoom"
+        android:text="get all room"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/mButtonClearTV"
+        app:layout_constraintLeft_toRightOf="@+id/mButton"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mButtonRoom"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewGetRoom"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="@+id/mGetButtonRoom"
+        app:layout_constraintRight_toRightOf="@+id/mGetButtonRoom"
+        app:layout_constraintTop_toBottomOf="@+id/mGetButtonRoom" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/mButtonClearTV"
         android:text="clear all textView"
         android:textAllCaps="false"
-        app:layout_constraintTop_toBottomOf="@+id/textViewRoom"
+        app:layout_constraintTop_toBottomOf="@+id/textViewGetRoom"
         app:layout_constraintBottom_toTopOf="@+id/textViewDeleteSp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
