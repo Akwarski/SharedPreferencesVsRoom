@@ -2,7 +2,10 @@ package com.example.speedtest
 
 import android.content.Context
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -13,7 +16,7 @@ import kotlin.system.measureNanoTime
 class MainActivity : AppCompatActivity() {
 
     private lateinit var viewModel: ViewModel
-    private val count = 100
+    private var mCount = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this).get(ViewModel::class.java)
 
+        val valueToCheck: EditText = findViewById(R.id.valueToCheck)
         val mButton: Button = findViewById(R.id.mButton)
         val mButtonRoom: Button = findViewById(R.id.mButtonRoom)
         val mButtonClear: Button = findViewById(R.id.mButtonClear)
@@ -38,10 +42,28 @@ class MainActivity : AppCompatActivity() {
                 Context.MODE_PRIVATE
         )
 
+        valueToCheck.addTextChangedListener(object: TextWatcher{
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                mCount = if(s.toString().isNullOrEmpty()){
+                    0
+                }else {
+                    Integer.parseInt(s.toString())
+                }
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+            }
+
+        })
+
 
         mButton.setOnClickListener {
             val time = measureNanoTime {
-                for (i in 0..count){
+                for (i in 0..mCount){
                     with(sharedPreference.edit()){
                         putInt("$i", i)
                         apply()
@@ -54,7 +76,7 @@ class MainActivity : AppCompatActivity() {
 
         mButtonRoom.setOnClickListener {
             val time = measureNanoTime {
-                for (i in 0..count){
+                for (i in 0..mCount){
                     viewModel.insert(SaveFieldData(id = i, number = i))
                 }
             }
