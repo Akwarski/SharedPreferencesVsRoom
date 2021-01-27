@@ -17,7 +17,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
 
-    <EditText
+    <!--<EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/valueToCheck"
@@ -26,9 +26,19 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title"
-        app:layout_constraintBottom_toTopOf="@+id/mButton"/>
+        app:layout_constraintBottom_toTopOf="@+id/mButton"/>-->
 
     <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mStartButton"
+        android:text="Start Benchmark"
+        android:textAllCaps="false"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <!--<Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/mButton"
@@ -148,6 +158,6 @@
         android:layout_marginBottom="10dp"
         app:layout_constraintLeft_toLeftOf="@+id/mButtonRoom"
         app:layout_constraintRight_toRightOf="@+id/mButtonRoom"
-        app:layout_constraintBottom_toTopOf="@+id/mButtonClear"/>
+        app:layout_constraintBottom_toTopOf="@+id/mButtonClear"/>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
