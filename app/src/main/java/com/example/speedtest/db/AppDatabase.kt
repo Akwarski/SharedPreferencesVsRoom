@@ -6,11 +6,13 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
+import com.example.speedtest.data.model.ChartData
 import com.example.speedtest.data.model.SaveFieldData
 
-@Database(entities = [SaveFieldData::class], version = 3)
+@Database(entities = [SaveFieldData::class, ChartData::class], version = 5)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun saveFieldDao(): SaveFieldDao
+    abstract fun chartDao(): ChartDao
 
     companion object {
         private var INSTANCE: AppDatabase? = null

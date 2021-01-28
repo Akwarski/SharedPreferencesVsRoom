@@ -6,27 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="35sp"
-        android:text="Time in seconds"
-        android:id="@+id/title"
+        android:id="@+id/spinner"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/mButton"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
-
-    <!--<EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/valueToCheck"
-        android:inputType="number"
-        android:digits="1234567890"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title"
-        app:layout_constraintBottom_toTopOf="@+id/mButton"/>-->
 
     <Button
         android:layout_width="wrap_content"
@@ -36,128 +23,15 @@
         android:textAllCaps="false"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
-    <!--<Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/mButton"
-        android:text="check SP"
-        android:textAllCaps="false"
+    <com.github.mikephil.charting.charts.HorizontalBarChart
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/chart.bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mStartButton"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/mButtonRoom"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView"
-        android:textSize="15sp"
-        app:layout_constraintLeft_toLeftOf="@+id/mButton"
-        app:layout_constraintRight_toRightOf="@+id/mButton"
-        app:layout_constraintTop_toBottomOf="@+id/mButton" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/mButtonRoom"
-        android:text="check room"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/mButton"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textViewRoom"
-        android:textSize="15sp"
-        app:layout_constraintLeft_toLeftOf="@+id/mButtonRoom"
-        app:layout_constraintRight_toRightOf="@+id/mButtonRoom"
-        app:layout_constraintTop_toBottomOf="@+id/mButtonRoom" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/mGetButton"
-        android:text="get all SP"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toTopOf="@+id/mButtonClearTV"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/mButtonRoom"
-        app:layout_constraintTop_toBottomOf="@+id/mButton" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textViewGetSp"
-        android:textSize="15sp"
-        app:layout_constraintLeft_toLeftOf="@+id/mGetButton"
-        app:layout_constraintRight_toRightOf="@+id/mGetButton"
-        app:layout_constraintTop_toBottomOf="@+id/mGetButton" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/mGetButtonRoom"
-        android:text="get all room"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toTopOf="@+id/mButtonClearTV"
-        app:layout_constraintLeft_toRightOf="@+id/mButton"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mButtonRoom"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textViewGetRoom"
-        android:textSize="15sp"
-        app:layout_constraintLeft_toLeftOf="@+id/mGetButtonRoom"
-        app:layout_constraintRight_toRightOf="@+id/mGetButtonRoom"
-        app:layout_constraintTop_toBottomOf="@+id/mGetButtonRoom" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/mButtonClearTV"
-        android:text="clear all textView"
-        android:textAllCaps="false"
-        app:layout_constraintTop_toBottomOf="@+id/textViewGetRoom"
-        app:layout_constraintBottom_toTopOf="@+id/textViewDeleteSp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/mButtonClear"
-        android:text="clear Both database and get time"
-        android:textAllCaps="false"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textViewDeleteSp"
-        android:textSize="15sp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintLeft_toLeftOf="@+id/mButton"
-        app:layout_constraintRight_toRightOf="@+id/mButton"
-        app:layout_constraintBottom_toTopOf="@+id/mButtonClear" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textViewDeleteRoom"
-        android:textSize="15sp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintLeft_toLeftOf="@+id/mButtonRoom"
-        app:layout_constraintRight_toRightOf="@+id/mButtonRoom"
-        app:layout_constraintBottom_toTopOf="@+id/mButtonClear"/>-->
+        android:minHeight="300dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

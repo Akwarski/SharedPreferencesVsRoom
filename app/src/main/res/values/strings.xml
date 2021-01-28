@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">SpeedTest</string>
+
+    <string-array name="category_array">
+        <item>zapisywanie danych do SP</item>
+        <item>zapisywanie danych do Room</item>
+        <item>Pobieranie danych z SP</item>
+        <item>Pobieranie danych z Room</item>
+        <item>Usuwanie danych z SP</item>
+        <item>Usuwanie danych z Room</item>
+    </string-array>
 </resources>
